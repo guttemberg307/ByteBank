@@ -7,7 +7,7 @@ public class ContaCorrente
     public double saldo = 100; // --> valor padrão
 
 
-    public bool Sacar(double valor)
+    public bool Sacar(double valor) // -- metodo Sacar 
     {
         if (this.saldo < valor)
         {
@@ -15,10 +15,15 @@ public class ContaCorrente
         }
         else
         {
-
             this.saldo -= valor;
-            return true;
+            return true; 
         }
+    }
+
+    public void Depositar(double valor) // --- usamos VOID quando o metodo nao retorna nada
+
+    {
+        this.saldo += valor; // recebe o valor e acrescenta no saldo
     }
 
 

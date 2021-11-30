@@ -10,20 +10,21 @@ namespace _04_ByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente minhaConta = new ContaCorrente();
+            ContaCorrente minhaConta = new ContaCorrente(); //--> nova instancia de contacorrente --> minhaconta
 
             minhaConta.titular = "Gutemberg";
         
 
             Console.WriteLine(minhaConta.saldo);
-            minhaConta.Sacar(50);
-            Console.WriteLine(minhaConta.saldo);
-            
-            bool resultatoSaque = minhaConta.Sacar(50);
+          
             bool resultatoSaquee = minhaConta.Sacar(500);
             
-            Console.WriteLine(resultatoSaque);
-            Console.WriteLine(resultatoSaquee);            
+        
+            Console.WriteLine(resultatoSaquee);
+            Console.WriteLine(minhaConta.saldo);
+
+            minhaConta.Depositar(500);
+            Console.WriteLine(minhaConta.saldo);
 
             Console.ReadLine();
         }
