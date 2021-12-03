@@ -13,11 +13,9 @@ public class ContaCorrente
         {
             return false;
         }
-        else
-        {
             this.saldo -= valor;
             return true; 
-        }
+      
     }
 
     public void Depositar(double valor) // --- usamos VOID quando o metodo nao retorna nada
@@ -26,5 +24,15 @@ public class ContaCorrente
         this.saldo += valor; // recebe o valor e acrescenta no saldo
     }
 
+    public bool Transferir(double valor, ContaCorrente contaDestino)// contaDestino é a instancia de contaCorrente
+    {
+        if (this.saldo < valor) // se o saldo for menor 
+        {
+            return false;  // return sempre para quando a condição for verdade
+        }   
+            this.saldo -= valor;// subtrai o valor 
+            contaDestino.Depositar(valor);// acrescenta o valor
+            return true;    
+    }
 
 }
