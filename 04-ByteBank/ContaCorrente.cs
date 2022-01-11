@@ -7,7 +7,7 @@ public class ContaCorrente
     public double saldo = 100; // --> valor padrão
 
 
-    public bool Sacar(double valor) // -- metodo Sacar 
+    public bool Sacar(double valor) 
     {
         if (this.saldo < valor)
         {
@@ -18,20 +18,20 @@ public class ContaCorrente
       
     }
 
-    public void Depositar(double valor) // --- usamos VOID quando o metodo nao retorna nada
+    public void Depositar(double valor)
 
     {
-        this.saldo += valor; // recebe o valor e acrescenta no saldo
+        this.saldo += valor; 
     }
 
-    public bool Transferir(double valor, ContaCorrente contaDestino)// contaDestino é a instancia de contaCorrente
+    public bool Transferir(double valor, ContaCorrente contaDestino)
     {
-        if (this.saldo < valor) // se o saldo for menor 
+        if (this.saldo < valor) 
         {
-            return false;  // return sempre para quando a condição for verdade
+            return false; 
         }   
-            this.saldo -= valor;// subtrai o valor 
-            contaDestino.Depositar(valor);// acrescenta o valor
+            this.saldo -= valor;
+            contaDestino.Depositar(valor);
             return true;    
     }
 
