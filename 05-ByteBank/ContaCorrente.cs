@@ -6,7 +6,7 @@ namespace _05_ByteBank
     public class ContaCorrente
     {
 
-        public Cliente titular;
+        public Cliente titular; // titular faz referencia ao objeto Cliente
         public int agencia;
         public int numero;
         public double saldo = 100; // --> valor padrão
