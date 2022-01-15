@@ -15,15 +15,15 @@ namespace _06_ByteBank
 
             Cliente cliente = new Cliente();
 
-            cliente.nome = "Guilherme";
-            cliente.cpf = "434.564.879-20";
-            cliente.profissao = "Desenvolvedor";
+            cliente.Nome = "Guilherme";
+            cliente.CPF = "434.564.879-20";
+            cliente.Profissao = "Desenvolvedor";
 
             conta.Saldo = -10; // --> infere a regra de negocio, por ser negativo nao retorna valor algum 
-            conta.Titular = cliente;
+            conta.Titular = cliente; // titular recebe os atributos de cliente 
            
             Console.WriteLine(conta.Saldo);
-            Console.WriteLine(conta.Titular.nome);
+            Console.WriteLine(conta.Titular.Nome);// nome é um atributo de cliente 
 
             Console.ReadLine();
         }
