@@ -8,8 +8,22 @@ namespace _06_ByteBank
 {
     public class Cliente
     {
-        public string nome;
-        public string cpf;
-        public string profissao;
-    }
+        public string _cpf; 
+        public string Nome { get; set; }
+        public string CPF 
+        {
+            get 
+            {
+                return _cpf;
+            } 
+            set
+            {
+                // logica de programação de CPF
+                _cpf = value;
+            } 
+        }
+        public string Profissao { get; set; }
+       
+        //prop + 2 tab --> atalho para get e set 
+    }   
 }
