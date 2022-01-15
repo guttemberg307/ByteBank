@@ -5,35 +5,34 @@ namespace _06_ByteBank
 {
     public class ContaCorrente
     {
-
-        public Cliente titular; 
+        public Cliente Titular { get; set; }
         public int agencia;
         public int numero;
-        private double saldo = 100; // --> valor padrão
+        private double _saldo = 100; // --> valor padrão
 
-
-        public void DefinirSaldo(double saldo)
+        public double Saldo
         {
-           if(saldo < 0) //--> se o saldo for negativo nao vai retornar valor algum 
+            get // faz o retorno do saldo
             {
-                return;
+                return _saldo;
             }
-              this.saldo = saldo;  //--> retornona o valor atual caso seja positivo 
+            set // defini o saldo 
+            {                   // value quer dizer valor
+                if (value < 0) //--> se o value for negativo nao vai retornar valor algum 
+                {
+                    return;
+                }
+                _saldo = value;  //--> retornona o value atual caso seja positivo 
+            }
         }
-
-        public double ObterSaldo()
-        {
-            return saldo; //--> somente obtem o saldo atual da conta 
-        }
-
 
         public bool Sacar(double valor) 
         {
-            if (saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
-            this.saldo -= valor;
+            _saldo -= valor;
             return true;
 
         }
@@ -41,16 +40,16 @@ namespace _06_ByteBank
         public void Depositar(double valor) 
 
         {
-            saldo += valor; 
+            _saldo += valor; 
         }
 
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (saldo < valor) 
+            if (_saldo < valor) 
             {
                 return false; 
             }
-            saldo -= valor;
+            _saldo -= valor;
             contaDestino.Depositar(valor);
             return true;
         }

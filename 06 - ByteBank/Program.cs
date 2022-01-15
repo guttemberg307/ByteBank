@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace _06_ByteBank
 {
-    internal class Program
+     class Program
     {
         static void Main(string[] args)
         {
 
             ContaCorrente conta = new ContaCorrente();
 
-            conta.DefinirSaldo(-10); // --> infere a regra de negocio, por ser negativo nao retorna valor algum 
+            Cliente cliente = new Cliente();
 
-            Console.WriteLine(conta.ObterSaldo());
+            cliente.nome = "Guilherme";
+            cliente.cpf = "434.564.879-20";
+            cliente.profissao = "Desenvolvedor";
+
+            conta.Saldo = -10; // --> infere a regra de negocio, por ser negativo nao retorna valor algum 
+            conta.Titular = cliente;
+           
+            Console.WriteLine(conta.Saldo);
+            Console.WriteLine(conta.Titular.nome);
 
             Console.ReadLine();
         }
